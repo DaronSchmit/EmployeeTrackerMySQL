@@ -14,9 +14,11 @@ INSERT INTO roles (title, salary, department_id)
                   ('Legal Consultant', '250000', 4),
                   ('CEO', '1000000000', 4);
 
+INSERT INTO employee (first_name, last_name, role_id)
+     VALUES          ('Big', 'Kahuna', 8);
+
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
-     VALUES          ('Big', 'Kahuna', 8, null),
-                     ('Star', 'Lord', 4, 1),
+     VALUES          ('Star', 'Lord', 4, 1),
                      ('Big', 'Money', 5, 1);
 
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
