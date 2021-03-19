@@ -7,32 +7,32 @@ CREATE DATABASE employees_db;
 USE employees_db;
 
 -- Create the table tasks.
-CREATE TABLE employee (
-  id int NOT NULL AUTO_INCREMENT,
-  first_name varchar(30) NOT NULL,
-  last_name varchar(30) NOT NULL,
-  role_id INT NOT NULL,
-  manager_id INT,
-  FOREIGN KEY(department_id)
-  REFERENCES department(id)
-  ON DELETE CASCADE
-  PRIMARY KEY (id)
+
+CREATE TABLE department (
+  id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  dept_name VARCHAR(30) NOT NULL
 );
 
 CREATE TABLE roles (
-  id int NOT NULL AUTO_INCREMENT,
+  id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   title VARCHAR(30) NOT NULL,
   salary DECIMAL NOT NULL,
   department_id INT NOT NULL,
   FOREIGN KEY(department_id)
   REFERENCES department(id)
   ON DELETE CASCADE
-  PRIMARY KEY (id)
 );
 
-CREATE TABLE department (
-  id int NOT NULL AUTO_INCREMENT,
-  dept_name VARCHAR(30) NOT NULL,
-  PRIMARY KEY (id)
+CREATE TABLE employee (
+  id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  first_name varchar(30) NOT NULL,
+  last_name varchar(30) NOT NULL,
+  role_id INT NOT NULL,
+  manager_id INT,
+  FOREIGN KEY(role_id) 
+  REFERENCES roles(id) 
+  ON DELETE CASCADE, 
+  FOREIGN KEY(manager_id)
+  REFERENCES employee(id)
+  ON DELETE CASCADE
 );
-
