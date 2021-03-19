@@ -1,8 +1,8 @@
-INSERT INTO department (dpname)
-VALUES ('Sales'),
-       ('Technician'),
-       ('Human Resources'),
-       ('Corporate');
+INSERT INTO department (dept_name)
+VALUES                 ('Sales'),
+                       ('Technician'),
+                       ('Human Resources'),
+                       ('Corporate');
        
 INSERT INTO roles (title, salary, department_id)
      VALUES       ('Field Technician', '40000', 2),
